@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "Brainly Link Saver",
+  "version": "1.0.0",
+  "description": "Save links from different sites directly to your Brainly account",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://api.recollectify.me/*"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "images/icon16.png"
+    }
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.youtube.com/*",
+        "https://*.x.com/*",
+        "https://*.twitter.com/*",
+        "https://*.leetcode.com/*"
+      ],
+      "js": ["js/motion.js", "js/content.js"],
+      "css": ["styles/content.css"]
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png"
+  },
+  "commands": {
+    "save-link": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Save current page to Brainly"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+} 

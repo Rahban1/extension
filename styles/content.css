@@ -1,0 +1,125 @@
+/* Content Script Styles for Brainly Link Saver */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Button styles */
+.brainly-save-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  cursor: pointer;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: brainly-fade-in 0.5s forwards 0.5s;
+}
+
+.brainly-save-btn:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.brainly-save-btn:active {
+  transform: translateY(0px);
+}
+
+.brainly-save-btn .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Message/toast styles */
+.brainly-message {
+  position: fixed;
+  bottom: 80px;
+  right: 24px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: brainly-fade-in 0.3s forwards;
+}
+
+.brainly-message-success {
+  background-color: #f0fdf4;
+  color: #166534;
+  border-left: 4px solid #22c55e;
+}
+
+.brainly-message-error {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border-left: 4px solid #ef4444;
+}
+
+.brainly-message .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animation keyframes */
+@keyframes brainly-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes brainly-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .brainly-save-btn {
+    background-color: #3b82f6;
+  }
+  
+  .brainly-save-btn:hover {
+    background-color: #2563eb;
+  }
+  
+  .brainly-message-success {
+    background-color: #022c22;
+    color: #4ade80;
+  }
+  
+  .brainly-message-error {
+    background-color: #2c0d0e;
+    color: #f87171;
+  }
+} 
