@@ -244,7 +244,7 @@ function handleLogin() {
 
     try {
       // Authenticate with the backend
-      const response = await fetch('https://api.recollectify.me/api/v1/user/signin', {
+      const response = await fetch('https://brainly-backend.rahban-ghani2001.workers.dev/api/v1/user/signin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -350,7 +350,7 @@ async function handleSave() {
       }
 
       // Make API call
-      const response = await fetch('https://api.recollectify.me/api/v1/content', {
+      const response = await fetch('https://brainly-backend.rahban-ghani2001.workers.dev/api/v1/content', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -503,7 +503,7 @@ async function loadRecentLinks() {
       return;
     }
     
-    const response = await fetch('https://api.recollectify.me/api/v1/content', {
+    const response = await fetch('https://brainly-backend.rahban-ghani2001.workers.dev/api/v1/content', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`
