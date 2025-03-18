@@ -10,7 +10,7 @@
     "notifications"
   ],
   "host_permissions": [
-    "https://api.recollectify.me/*"
+    "https://brainly-backend.rahban-ghani2001.workers.dev/*"
   ],
   "action": {
     "default_popup": "popup/popup.html",
@@ -34,7 +34,9 @@
     }
   ],
   "icons": {
-    "16": "images/icon16.png"
+    "16": "images/icon16.png",
+    "32" : "images/icon32.png",
+    "128" : "images/icon128.png"
   },
   "commands": {
     "save-link": {

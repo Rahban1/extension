@@ -3,7 +3,7 @@
  * Handles all communication with the Brainly backend API
  */
 
-const API_BASE_URL = 'https://api.recollectify.me/api/v1';
+const API_BASE_URL = 'https://brainly-backend.rahban-ghani2001.workers.dev/api/v1';
 
 /**
  * Authenticate a user with the Brainly backend
